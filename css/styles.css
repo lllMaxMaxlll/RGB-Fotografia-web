@@ -1,0 +1,228 @@
+/*Fuentes*/
+
+@font-face {
+    font-family: "Montserrat";
+    src: url('../fonts/Montserrat-Regular.ttf');
+}
+
+/*Reseteo CSS*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+/*Generales*/
+
+html {
+    font-size: 20px;
+}
+
+@media (max-width: 440px){
+    html 
+    {
+        font-size: 18px;
+    }
+}
+
+body
+{
+    font-family: "Montserrat", sans-serif;
+    color: #67666e;
+}
+
+img
+{
+    max-width: 100%;
+}
+
+p
+{
+    margin-bottom: 0.8rem;
+}
+
+/* Hero */
+
+.hero
+{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+@keyframes AnimacionHero {
+    0% {
+        opacity: 0;
+        animation-timing-function: ease-in;
+    }
+    
+    10% {opacity: 1;}
+
+    25% {transform: scale(1.2);}
+
+    75% {opacity: 0; transform: scale(1.1);}
+
+    100% {opacity: 0;}
+}
+
+.hero div
+{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: AnimacionHero 20s infinite;
+}
+
+.hero div:nth-child(1)
+{
+    background-image: url(../img/front/front2.jpg);
+}
+
+.hero div:nth-child(2)
+{
+    background-image: url(../img/front/front1.jpg);
+    animation-delay: 4s;
+}
+
+.hero div:nth-child(3)
+{
+    background-image: url(../img/front/front3.jpg);
+    animation-delay: 8s;
+}
+
+.hero div:nth-child(4)
+{
+    background-image: url(../img/front/front4.jpg);
+    animation-delay: 12s;
+}
+
+.hero div:nth-child(5)
+{
+    background-image: url(../img/front/front.jpg);
+    animation-delay: 16s;
+}
+
+.hero .hero-logo
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    animation: none;
+    opacity: 1;
+    width: 30%;
+    height: auto;
+}
+
+.hero .hero-down
+{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    animation: none;
+    opacity: 1;
+    width: 5%;
+    height: auto;
+    text-align: center;
+}
+
+@media (max-width: 720px){
+    .hero .hero-logo {
+        width: 60%;
+    }
+
+    .hero .hero-down {
+        width: 10%;
+    }
+}
+
+@media (max-width: 400px){
+    .hero .hero-logo {
+        width: 80%;
+    }
+
+    .hero .hero-down {
+        width: 20%;
+    }
+}
+
+/* Header */
+
+header{
+    width: 100%;
+    height: 70px;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px #67666e;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2em;
+    transition: all 0.6s ease-in-out;
+}
+
+header.transparente {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+header img {
+    height: 60%;
+    width: auto;
+    transition: all 0.6s ease-in-out;
+}
+
+header.transparente img{
+    filter: invert(100%);
+}
+
+header nav a 
+{
+    color: #67666e;
+    font-weight: normal;
+    margin-left: 1em;
+    transition: all .3s ease-in-out;
+}
+
+header.transparente nav a {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+header nav a.activo,
+header nav a:hover {
+    color: #232225;
+    font-weight: bold;
+}
+
+header.transparente nav a:hover,
+header.transparente nav a.activo {
+    color: rgb(255, 255, 255);
+}
+
+/* Layout */
+
+.primera {
+    margin-top: 100vh;
+}
