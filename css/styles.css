@@ -184,7 +184,8 @@ header{
 }
 
 header.transparente {
-    background-color: transparent;
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,0.31976540616246496) 0%, rgba(248,254,255,0) 100%);
     box-shadow: none;
 }
 
@@ -219,6 +220,7 @@ header nav a:hover {
 header.transparente nav a:hover,
 header.transparente nav a.activo {
     color: rgb(255, 255, 255);
+    z-index: 2;
 }
 
 /*Boton burguer*/
@@ -227,15 +229,15 @@ header.transparente nav a.activo {
 {
     position: fixed;
     top: 1rem;
-    left: 1rem;
+    right: 1rem;
     cursor: pointer;
-    z-index: 10;
+    z-index: 20;
     display: none;
 }
 
 #burger .barra
 {
-    width: 2rem;
+    width: 1.5rem;
     height: 0.25rem;
     background-color: rgba(255, 255, 255, 0.75);
     margin: 0.25rem;
@@ -245,31 +247,29 @@ header.transparente nav a.activo {
 
 #burger.abierto .barra
 {
-    background-color: white;
+    background-color: #67666e3f;;
 }
 
 #burger.abierto .barra.superior
 {
-    transform: translateY(8px) rotate(45deg);
+    transform: translateY(10px) rotate(45deg);
+    opacity: 0;
 }
 
 #burger.abierto .barra.media
 {
-    opacity: 0;
+    opacity: 1;
 }
 
 #burger.abierto .barra.inferior
 {
-    transform: translateY(-12px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg);
+    opacity: 0;
 }
 
-@media (max-width: 620px){
+@media (max-width: 720px){
     #burger {
-        display: block;
-    }
-
-    header {
-        justify-content: flex-end;
+        display: inline;
     }
 
     header nav {
@@ -279,24 +279,25 @@ header.transparente nav a.activo {
 
 .menu
 {
-    width: 250px;
+    width: 200px;
     height: 100vh;
     position: fixed;
     top: 0; 
-    left: -250px;
-    background-color: rgba(45, 45, 45, 0.75);
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1.1rem;
+    right: -200px;
+    background-color: white;
+    box-shadow: #67666e3f -3px 0px 10px;
+    font-size: 1rem;
     transition: all 0.5s ease-in-out;
 }
 
 .menu.abierto {
-    left: 0;
+    right: 0;
+    z-index: 3;
 }
 
 .menu nav
 {
-    padding: 1rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     padding-top: 70px;
@@ -305,8 +306,8 @@ header.transparente nav a.activo {
 
 .menu nav a
 {
-    padding: 0.6rem 0;
-    color: rgba(255, 255, 255, 0.7);
+    padding: 0.5rem;
+    color: #67666e;
     display: block;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
@@ -314,13 +315,14 @@ header.transparente nav a.activo {
 
 .menu nav a:hover
 {
-    color: white;
+    color: #232225;
+    font-weight: bold;
 }
 
 .copyright
 {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.9rem;
+    color: #67666e;
+    font-size: 0.8rem;
     position: absolute;
     bottom: 0;
     left: 0;
