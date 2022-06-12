@@ -93,12 +93,12 @@ p
 
 .hero div:nth-child(1)
 {
-    background-image: url(../img/front/front2.jpg);
+    background-image: url(../img/front/front1.jpg);
 }
 
 .hero div:nth-child(2)
 {
-    background-image: url(../img/front/front1.jpg);
+    background-image: url(../img/front/front2.jpg);
     animation-delay: 4s;
 }
 
@@ -116,7 +116,7 @@ p
 
 .hero div:nth-child(5)
 {
-    background-image: url(../img/front/front.jpg);
+    background-image: url(../img/front/front5.jpg);
     animation-delay: 16s;
 }
 
@@ -219,6 +219,114 @@ header nav a:hover {
 header.transparente nav a:hover,
 header.transparente nav a.activo {
     color: rgb(255, 255, 255);
+}
+
+/*Boton burguer*/
+
+#burger
+{
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    cursor: pointer;
+    z-index: 10;
+    display: none;
+}
+
+#burger .barra
+{
+    width: 2rem;
+    height: 0.25rem;
+    background-color: rgba(255, 255, 255, 0.75);
+    margin: 0.25rem;
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+#burger.abierto .barra
+{
+    background-color: white;
+}
+
+#burger.abierto .barra.superior
+{
+    transform: translateY(8px) rotate(45deg);
+}
+
+#burger.abierto .barra.media
+{
+    opacity: 0;
+}
+
+#burger.abierto .barra.inferior
+{
+    transform: translateY(-12px) rotate(-45deg);
+}
+
+@media (max-width: 620px){
+    #burger {
+        display: block;
+    }
+
+    header {
+        justify-content: flex-end;
+    }
+
+    header nav {
+        display: none;
+    }
+}
+
+.menu
+{
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0; 
+    left: -250px;
+    background-color: rgba(45, 45, 45, 0.75);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    transition: all 0.5s ease-in-out;
+}
+
+.menu.abierto {
+    left: 0;
+}
+
+.menu nav
+{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px;
+
+}
+
+.menu nav a
+{
+    padding: 0.6rem 0;
+    color: rgba(255, 255, 255, 0.7);
+    display: block;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu nav a:hover
+{
+    color: white;
+}
+
+.copyright
+{
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0.5rem;
+    text-align: center;
+    width: 100%;
 }
 
 /* Layout */
