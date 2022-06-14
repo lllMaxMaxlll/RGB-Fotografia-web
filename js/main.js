@@ -3,9 +3,9 @@ $(document).ready(function() {
     $(window).on('scroll', function() {
         let posicion = $('#pr').offset();
         if ($(window).scrollTop() >= posicion.top) {
-            $('header').removeClass('transparente');
+            $('header,#burger').removeClass('transparente');
         } else {
-            $('header').addClass('transparente');
+            $('header,#burger').addClass('transparente');
         }
     })
     $('#burger').click(function(){

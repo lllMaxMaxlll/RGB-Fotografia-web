@@ -211,9 +211,10 @@ header.transparente nav a {
     color: rgba(255, 255, 255, 0.75);
 }
 
-header nav a.activo,
+header nav a.activo, 
+a.activo, 
 header nav a:hover {
-    color: #232225;
+    color: black;
     font-weight: bold;
 }
 
@@ -233,38 +234,19 @@ header.transparente nav a.activo {
     cursor: pointer;
     z-index: 20;
     display: none;
+    transition: all .5s ease-in-out;
 }
 
-#burger .barra
+#burger.abierto
 {
-    width: 1.5rem;
-    height: 0.25rem;
-    background-color: rgba(255, 255, 255, 0.75);
-    margin: 0.25rem;
-    border-radius: 15px;
-    transition: all 0.3s ease-in-out;
+    filter: invert();
+    transform: rotate(360deg);
+    transition: all .5s ease-in-out;
 }
 
-#burger.abierto .barra
-{
-    background-color: #67666e3f;;
-}
+#burger.transparente img {
+    filter: invert(100%);
 
-#burger.abierto .barra.superior
-{
-    transform: translateY(10px) rotate(45deg);
-    opacity: 0;
-}
-
-#burger.abierto .barra.media
-{
-    opacity: 1;
-}
-
-#burger.abierto .barra.inferior
-{
-    transform: translateY(-10px) rotate(-45deg);
-    opacity: 0;
 }
 
 @media (max-width: 720px){
@@ -335,4 +317,40 @@ header.transparente nav a.activo {
 
 .primera {
     margin-top: 100vh;
+}
+
+.fila {
+    display: flex;
+    padding: 2rem 1rem;
+}
+
+.col-75 {
+    width: 75%;
+    padding: 1rem 0.5rem;
+}
+.col-66 {
+    width: 66%;
+    padding: 1rem 0.5rem;
+}
+.col-50 {
+    width: 50%;
+    padding: 1rem 0.5rem;
+}
+.col-33 {
+    width: 33%;
+    padding: 1rem 0.5rem;
+}
+.col-25 {
+    width: 25%;
+    padding: 1rem 0.5rem;
+}
+
+@media (max-width: 720px) {
+    .fila {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .col-75, .col-66, .col-50, .col-33, .col-25 {
+        width: 100%;
+    }
 }
